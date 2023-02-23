@@ -1,0 +1,52 @@
+{
+  "name": "dom-parts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Possible DOM Parts APIs",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "wireit",
+    "format": "prettier src/**/*.ts",
+    "test": "wireit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinfagnani/dom-parts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinfagnani/dom-parts/issues"
+  },
+  "homepage": "https://github.com/justinfagnani/dom-parts#readme",
+  "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@web/dev-server": "^0.1.35",
+    "@web/test-runner": "^0.15.1",
+    "@web/test-runner-playwright": "^0.9.0",
+    "prettier": "^2.8.4",
+    "typescript": "^5.0.0-beta",
+    "wireit": "^0.9.5"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc --pretty",
+      "files": [
+        "src/**/*.js",
+        "tsconfig.json"
+      ],
+      "output": [
+        "index.{js|js.map|d.ts|d.ts.map}"
+      ],
+      "clean": "if-file-deleted"
+    },
+    "test": {
+      "command": "wtr",
+      "dependencies": [
+        "build"
+      ]
+    }
+  }
+}
