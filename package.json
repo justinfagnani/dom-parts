@@ -34,16 +34,21 @@
     "build": {
       "command": "tsc --pretty",
       "files": [
-        "src/**/*.js",
+        "src/**/*.ts",
         "tsconfig.json"
       ],
-      "output": [
-        "index.{js|js.map|d.ts|d.ts.map}"
+      "output": [        
+        "index.{js|js.map|d.ts|d.ts.map}",
+        "lib/",
+        "test/",
+        ".tsbuildinfo"
       ],
       "clean": "if-file-deleted"
     },
     "test": {
       "command": "wtr",
+      "files": ["web-test-runner.config.js"],
+      "output": [],
       "dependencies": [
         "build"
       ]

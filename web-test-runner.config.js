@@ -10,4 +10,5 @@ export default {
       timeout: '60000', // default 2000
     },
   },
+  browserLogs: true,
 };
